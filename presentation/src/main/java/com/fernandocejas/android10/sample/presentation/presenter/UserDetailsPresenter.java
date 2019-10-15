@@ -15,7 +15,6 @@
  */
 package com.fernandocejas.android10.sample.presentation.presenter;
 
-import android.support.annotation.NonNull;
 import com.fernandocejas.android10.sample.domain.User;
 import com.fernandocejas.android10.sample.domain.exception.DefaultErrorBundle;
 import com.fernandocejas.android10.sample.domain.exception.ErrorBundle;
@@ -28,6 +27,8 @@ import com.fernandocejas.android10.sample.presentation.mapper.UserModelDataMappe
 import com.fernandocejas.android10.sample.presentation.model.UserModel;
 import com.fernandocejas.android10.sample.presentation.view.UserDetailsView;
 import javax.inject.Inject;
+
+import androidx.annotation.NonNull;
 
 /**
  * {@link Presenter} that controls communication between views and models of the presentation

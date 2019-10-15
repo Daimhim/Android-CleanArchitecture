@@ -12,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import butterknife.Bind;
+
+import androidx.core.util.Preconditions;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.fernandocejas.android10.sample.presentation.R;
@@ -21,7 +23,6 @@ import com.fernandocejas.android10.sample.presentation.model.UserModel;
 import com.fernandocejas.android10.sample.presentation.presenter.UserDetailsPresenter;
 import com.fernandocejas.android10.sample.presentation.view.UserDetailsView;
 import com.fernandocejas.android10.sample.presentation.view.component.AutoLoadImageView;
-import com.fernandocejas.arrow.checks.Preconditions;
 import javax.inject.Inject;
 
 /**
@@ -32,14 +33,14 @@ public class UserDetailsFragment extends BaseFragment implements UserDetailsView
 
   @Inject UserDetailsPresenter userDetailsPresenter;
 
-  @Bind(R.id.iv_cover) AutoLoadImageView iv_cover;
-  @Bind(R.id.tv_fullname) TextView tv_fullname;
-  @Bind(R.id.tv_email) TextView tv_email;
-  @Bind(R.id.tv_followers) TextView tv_followers;
-  @Bind(R.id.tv_description) TextView tv_description;
-  @Bind(R.id.rl_progress) RelativeLayout rl_progress;
-  @Bind(R.id.rl_retry) RelativeLayout rl_retry;
-  @Bind(R.id.bt_retry) Button bt_retry;
+  @BindView(R.id.iv_cover) AutoLoadImageView iv_cover;
+  @BindView(R.id.tv_fullname) TextView tv_fullname;
+  @BindView(R.id.tv_email) TextView tv_email;
+  @BindView(R.id.tv_followers) TextView tv_followers;
+  @BindView(R.id.tv_description) TextView tv_description;
+  @BindView(R.id.rl_progress) RelativeLayout rl_progress;
+  @BindView(R.id.rl_retry) RelativeLayout rl_retry;
+  @BindView(R.id.bt_retry) Button bt_retry;
 
   public static UserDetailsFragment forUser(int userId) {
     final UserDetailsFragment userDetailsFragment = new UserDetailsFragment();
@@ -85,7 +86,6 @@ public class UserDetailsFragment extends BaseFragment implements UserDetailsView
 
   @Override public void onDestroyView() {
     super.onDestroyView();
-    ButterKnife.unbind(this);
   }
 
   @Override public void onDestroy() {
